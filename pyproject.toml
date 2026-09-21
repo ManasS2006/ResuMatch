@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-resume-screener"
+version = "0.1.0"
+description = "An NLP pipeline that extracts skills/experience/education from resumes and ranks candidates against a job description."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "scikit-learn>=1.4",
+    "numpy>=1.26",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "pydantic>=2.6",
+]
+
+[project.optional-dependencies]
+pdf = ["pdfplumber>=0.11"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["backend*", "data*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

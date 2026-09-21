@@ -1,0 +1,14 @@
+# NLP pipeline + ranking
+scikit-learn>=1.4
+numpy>=1.26
+
+# Backend API
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+
+# Optional: parse PDF resumes
+pdfplumber>=0.11
+
+# Dev / tests
+pytest>=8.0
