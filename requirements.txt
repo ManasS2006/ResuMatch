@@ -10,5 +10,8 @@ pydantic>=2.6
 # Optional: parse PDF resumes
 pdfplumber>=0.11
 
+# Charts for the README
+matplotlib>=3.8
+
 # Dev / tests
 pytest>=8.0

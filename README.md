@@ -1,8 +1,15 @@
-# AI-Powered Resume Screener
+# ResuMatch
 
-An NLP system that **extracts skills, experience, and education from resumes** and
-**ranks candidates against a job description** with an explainable match score —
-served through a **FastAPI** backend and an interactive **React dashboard**.
+![CI](https://github.com/ManasS2006/ResuMatch/actions/workflows/ci.yml/badge.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+
+**ResuMatch** is an AI resume-to-job matcher. It **extracts skills, experience, and
+education from resumes** and **ranks candidates against a job description** with an
+explainable match score — served through a **FastAPI** backend and an interactive
+**React dashboard**.
 
 ```
 Resume text ─▶ NLP extraction ─▶ ranking (skills + similarity + experience) ─▶ ranked candidates
@@ -39,10 +46,20 @@ test set:
 The benchmark is intentionally non-trivial: candidates span under- to
 over-qualified, "hard negatives" from adjacent roles share some skills, and ~10%
 of labels are flipped to model real recruiter disagreement — so the score
-reflects genuine judgment, not a separable toy task. Reproduce it any time:
+reflects genuine judgment, not a separable toy task.
+
+<p align="center">
+  <img src="docs/images/eval_metrics.png" alt="Evaluation metrics" width="49%">
+  <img src="docs/images/score_distribution.png" alt="Score distribution by true label" width="49%">
+</p>
+
+The score distribution shows why accuracy is a realistic 87% rather than a
+suspicious 100%: true matches and non-matches separate well around the 0.60
+threshold, but a genuine overlap band remains. Reproduce everything any time:
 
 ```bash
-python scripts/01_evaluate.py
+python scripts/01_evaluate.py      # metrics
+python scripts/plot_results.py     # regenerate the charts above
 ```
 
 ---

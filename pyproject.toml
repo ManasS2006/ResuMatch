@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ai-resume-screener"
+name = "resumatch"
 version = "0.1.0"
-description = "An NLP pipeline that extracts skills/experience/education from resumes and ranks candidates against a job description."
+description = "ResuMatch — an NLP pipeline that extracts skills/experience/education from resumes and ranks candidates against a job description."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
